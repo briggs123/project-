@@ -1,0 +1,53 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text('USER FINES'),
+          ),
+          body: ListView(children: <Widget>[
+            Center(
+                child: Text(
+              'AADHAR NUMBER',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            )),
+            DataTable(
+              columns: [
+                DataColumn(label: Text('VEHICLE NUMBER')),
+                DataColumn(label: Text('Name')),
+                DataColumn(label: Text('RS')),
+              ],
+              rows: [
+                DataRow(cells: [
+                  DataCell(Text('AP311032')),
+                  DataCell(Text('Arya')),
+                  DataCell(Text('500')),
+                ]),
+                DataRow(cells: [
+                  DataCell(Text('AP313456')),
+                  DataCell(Text('John')),
+                  DataCell(Text('1000')),
+                ]),
+                DataRow(cells: [
+                  DataCell(Text('AP311234')),
+                  DataCell(Text('Tony')),
+                  DataCell(Text('2000')),
+                ]),
+              ],
+            ),
+          ])),
+    );
+  }
+}
